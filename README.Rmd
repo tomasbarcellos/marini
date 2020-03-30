@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# marini
+
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+<!-- badges: end -->
+
+## Installation
+
+``` r
+remotes::install_github("tomasbarcellos/marini)
+```
+
+## Example
+
+Para conhecer os textos com o termo "subimperislimo" no título
+podemos usar: 
+
+```{r subimperialismo}
+library(marini)
+library(dplyr)
+"subimperialismo" %>% 
+  busca_marini() %>% 
+  nuvem()
+```
+
+Por exemplo as fontes mais comuns são:
+
+```{r fontes}
+library(stringr)
+textos_marini %>% 
+  mutate(fonte = str_remove(fonte, "[,\\.].+")) %>% 
+  count(fonte, sort = TRUE)
+```
+
+Se quisermos conhecer o conteúdo dos artigos do Sol do México:
+
+```{r sol de mexico}
+textos_marini %>% 
+  mutate(fonte = str_remove(fonte, "[,\\.].+")) %>% 
+  filter(fonte == "El Sol de México") %>% 
+  nuvem()
+```
+
+O exemplo abaixo apresenta os textos que contém o termo rascismo e 
+uma núvem de palavras de seus conteúdos.
+
+```{r rascismo}
+racismo <- textos_marini %>% 
+  filter(str_detect(texto, "racismo")) 
+
+racismo
+nuvem(racismo)
+```
+
