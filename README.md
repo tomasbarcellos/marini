@@ -53,6 +53,23 @@ textos_marini %>%
 #> # … with 44 more rows
 ```
 
+A evolução da produção anual de Marini:
+
+``` r
+library(ggplot2)
+textos_marini %>% 
+  count(ano, sort = TRUE) %>% 
+  ggplot(aes(ano, n)) + 
+  geom_col(fill = "darkred") + 
+  theme_minimal() + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.y = element_line(linetype = 2, color = "gray50"),
+        panel.grid.major.x = element_line(linetype = 4)) +
+  scale_x_continuous(breaks = seq(1965, 1996, 5))
+```
+
+<img src="man/figures/README-anual-1.png" width="100%" />
+
 Se quisermos conhecer o conteúdo dos artigos do Sol do México:
 
 ``` r
