@@ -23,26 +23,9 @@ usar:
 ``` r
 library(marini)
 library(dplyr)
-#> Warning: package 'dplyr' was built under R version 3.5.2
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 "subimperialismo" %>% 
   busca_marini() %>% 
   nuvem()
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> puede could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> economía could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> países could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> dependientes could not be fit on page. It will not be plotted.
 ```
 
 <img src="man/figures/README-subimperialismo-1.png" width="100%" />
@@ -51,7 +34,6 @@ Por exemplo as fontes mais comuns são:
 
 ``` r
 library(stringr)
-#> Warning: package 'stringr' was built under R version 3.5.2
 textos_marini %>% 
   mutate(fonte = str_remove(fonte, "[,\\.].+")) %>% 
   count(fonte, sort = TRUE)
@@ -78,38 +60,6 @@ textos_marini %>%
   mutate(fonte = str_remove(fonte, "[,\\.].+")) %>% 
   filter(fonte == "El Sol de México") %>% 
   nuvem()
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> militares could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> internacional could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> carter could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> represión could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> chile could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> problema could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> congreso could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> fuerzas could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> latinoamericano could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> recientemente could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> países could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> movimiento could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> política could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> campo could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> puede could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> norteamericanas could not be fit on page. It will not be plotted.
 ```
 
 <img src="man/figures/README-sol de mexico-1.png" width="100%" />
@@ -131,44 +81,6 @@ racismo
 #> 4   109 El camino legal… El reformismo y la co…  1976 "Una de las dificult…
 #> 5   131 La influencia d… Excélsior, México, 11…  1976 La importancia de Áf…
 nuvem(racismo)
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> américa could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> país could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> governo could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> legal could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> brasileiro could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> considerar could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> brasileña could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> forças could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> presidente could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> influencia could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> democrático could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> nuevos could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> ello could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> división could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> principales could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> precisamente could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> regime could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> teórica could not be fit on page. It will not be plotted.
-#> Warning in wordcloud::wordcloud(palavras$word, palavras$n, scale = c(4, :
-#> cualquier could not be fit on page. It will not be plotted.
 ```
 
 <img src="man/figures/README-rascismo-1.png" width="100%" />
